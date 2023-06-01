@@ -5,16 +5,30 @@ import {FaTrashAlt} from 'react-icons/fa'
 
 const Profile = () => {
      const [userProfile, setUserProfile ] = useState(profileData);
+     const [search, setSearch ] = useState('');
 
      const removeProfile = (id) =>{
         const newProfileList = userProfile.filter((profile) =>  profile.id !== id);
         setUserProfile(newProfileList);
      }
+
+    const handelInputChange = e =>{
+        setSearch(e.target.value)
+    }
   return (
     <section className='profile-sec --flex-center'>
         <div className="container">
             <h2 className='--text-light'>Profile App</h2>
-            {userProfile.map((profile) => (
+            <div className="--form-control">
+                <input type="text" className='--width-100'  placeholder='Enter search term...' onChange={(e) => handelInputChange(e)} value={search}/>
+            </div>
+            {userProfile.filter( value => {
+                if (search.trim() == ''){
+                    return value
+                } else if (value.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())){
+                    return value;
+                }
+            }).map((profile) => (
                 <div className="profile --card --flex-between" key={profile.id}>
                     <img src={profile.img} alt="profile" />
                     <div className='desc'>
