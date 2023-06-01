@@ -1,0 +1,26 @@
+.profile-sec {
+    background: var(--dark-blue);
+    min-height: 100vh;
+}
+.profile{
+    min-width: 350px;
+    padding: 10px 30px;
+    border: 1px solid #777;
+    margin-bottom: 1rem;
+    img {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+    }
+    .icon{
+        color: white;
+        &:hover{
+            color:red;
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .profile {
+        flex-direction: row;
+    }
+}

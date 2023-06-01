@@ -8,15 +8,15 @@ const Profile = () => {
   return (
     <section className='profile-sec'>
         <div className="container">
-            <h2>Profile App</h2>
+            <h2 className='--text-light'>Profile App</h2>
             {userProfile.map((profile) => (
-                <div className="profile" key={profile.id}>
+                <div className="profile --card --flex-between" key={profile.id}>
                     <img src={profile.img} alt="profile" />
                     <div className='desc'>
-                        <h4>Name: {profile.name}</h4>
-                        <p>Job: {profile.job}</p>
+                        <h4 className='--text-light'>Name: {profile.name}</h4>
+                        <p className='--text-light'>Job: {profile.job}</p>
                     </div>
-                    <FaTrashAlt size={18}/>
+                    <FaTrashAlt size={18} className='icon'/>
                 </div>
             ))}
         </div>
