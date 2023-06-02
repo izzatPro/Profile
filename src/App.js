@@ -1,13 +1,13 @@
 import "./App.scss";
-import Profile from "./components/profile/Profile";
+import Jokes from "./components/jokes/Jokes";
 
 
 const App = () =>{
 
   return (
-  <div>
-    <Profile/>
-  </div>
+    <div>
+       <Jokes/>
+    </div>
   )
 }
 export default App;
